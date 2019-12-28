@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ActionManager : MonoBehaviour
 {
-    public float movingSpeed;
-    public float distanceToHit;
-    public float distanceToIdle;
+    public float movingSpeed = 1;
+    public float distanceToHit = 1;
+    public float distanceToIdle = 0.5f;
 
     Animator animator;
     bool moving = false;

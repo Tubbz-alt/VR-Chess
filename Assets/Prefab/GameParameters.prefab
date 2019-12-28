@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3996057763951467794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3996057763951467796}
+  - component: {fileID: 3996057763951467797}
+  m_Layer: 0
+  m_Name: GameParameters
+  m_TagString: GameParameters
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3996057763951467796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996057763951467794}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3996057763951467797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996057763951467794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb01c72d73aafe4fac3de41189ef989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamPrefabs:
+  - team: 0
+    Pawn: {fileID: 140808, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+    Bishop: {fileID: 192428, guid: c26833473ce06df4ba5631fd7a4b98bc, type: 3}
+    Rook: {fileID: 171076, guid: 2ea27af6ead886c4d93bb53d28c6c25b, type: 3}
+    Knight: {fileID: 142548, guid: 659981ab97d9bb64990767ef5f931f7c, type: 3}
+    King: {fileID: 128260, guid: 616cc160fcb3b124b8e0fc587258594b, type: 3}
+    Queen: {fileID: 102810, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
+    Map: {fileID: 6728977676712656354, guid: 7c03c82e8a24ffb4899161275c4fdddd, type: 3}
+  - team: 1
+    Pawn: {fileID: 114438, guid: 2ef59bc5d753ebe4490b708befe65999, type: 3}
+    Bishop: {fileID: 194332, guid: 70ad07d06832dba42a3bb244ab822fd1, type: 3}
+    Rook: {fileID: 112422, guid: 8cd752dc36d412b4bba2efd06775153a, type: 3}
+    Knight: {fileID: 124030, guid: d48e97c38730e6d4a8a87d44d568bc50, type: 3}
+    King: {fileID: 173802, guid: 388fa61abd880a549864058f895c8045, type: 3}
+    Queen: {fileID: 165754, guid: 9a6b87430c6b2684aa9c1d4616d38a60, type: 3}
+    Map: {fileID: 8547237481107839885, guid: dad30fd2a618f4f4eb42f044d46e25de, type: 3}
+  whiteTeam: 0
+  blackTeam: 1

@@ -914,8 +914,9 @@ GameObject:
   m_Component:
   - component: {fileID: 474098}
   - component: {fileID: 9523638}
+  - component: {fileID: 114926158388275004}
   m_Layer: 0
-  m_Name: Character_Goblin_Female
+  m_Name: Goblin_Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -962,7 +963,7 @@ Animator:
   m_GameObject: {fileID: 124030}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2fbdf89386016a409d444c87be123bd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -971,6 +972,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114926158388275004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547cc33bc060bd9408e05c706f5fa3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingSpeed: 1
+  distanceToHit: 1
+  distanceToIdle: 0.5
 --- !u!1 &126850
 GameObject:
   m_ObjectHideFlags: 0
