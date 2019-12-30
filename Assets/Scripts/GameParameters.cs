@@ -20,7 +20,7 @@ public class GameParameters : MonoBehaviour
 
     public List<TeamPrefabs> teamPrefabs;
     [SerializeField]
-    public enum Team {Deads, Goblins};
+    public enum Team {Deads, Goblins, Samurais};
 
     public Team whiteTeam = Team.Deads;
     public Team blackTeam = Team.Goblins;

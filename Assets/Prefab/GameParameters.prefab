@@ -60,5 +60,13 @@ MonoBehaviour:
     King: {fileID: 173802, guid: 388fa61abd880a549864058f895c8045, type: 3}
     Queen: {fileID: 165754, guid: 9a6b87430c6b2684aa9c1d4616d38a60, type: 3}
     Map: {fileID: 8547237481107839885, guid: dad30fd2a618f4f4eb42f044d46e25de, type: 3}
+  - team: 2
+    Pawn: {fileID: 154470, guid: f795882e1b9974b4780286cae6c8451e, type: 3}
+    Bishop: {fileID: 155190, guid: 2f6e7983bbada0a4e80b27022ad6e81d, type: 3}
+    Rook: {fileID: 141740, guid: 2c9f240826536fd4aa5e97911f60ba6a, type: 3}
+    Knight: {fileID: 170078, guid: 46dce62b253167e4f9bbd3a9e88903eb, type: 3}
+    King: {fileID: 187164, guid: 9fdc6912325767d42a42076b3e329b0c, type: 3}
+    Queen: {fileID: 159832, guid: df0899985bace034e9fb1fc4429f873b, type: 3}
+    Map: {fileID: 1811853048104946392, guid: 21467b08ccf743b4084bc6621694c481, type: 3}
   whiteTeam: 0
   blackTeam: 1

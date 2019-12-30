@@ -207,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &495356
 Transform:
   m_ObjectHideFlags: 0
@@ -1932,6 +1932,12 @@ MonoBehaviour:
   movingSpeed: 4
   distanceToHit: 1
   distanceToIdle: 0.1
+  Fx: {fileID: 195742, guid: c83fb3ef04bb383408bb2064b89690b2, type: 3}
+  FxRoot: {fileID: 159550}
+  FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
+  FxFirerate: 1
+  FxAmountToSpawn: 1
+  FxDelay: 0
 --- !u!1 &145006
 GameObject:
   m_ObjectHideFlags: 0

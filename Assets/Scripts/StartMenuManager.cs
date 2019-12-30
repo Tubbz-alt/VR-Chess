@@ -23,6 +23,7 @@ public class StartMenuManager : MonoBehaviour
         GameObject.Find("StartButton").GetComponent<Button>().onClick.AddListener(StartGame);
         GameObject.Find("NextButton").GetComponent<Button>().onClick.AddListener(NextTeam);
         GameObject.Find("PreviousButton").GetComponent<Button>().onClick.AddListener(PreviousTeam);
+        GameObject.Find("AttackButton").GetComponent<Button>().onClick.AddListener(Attack);
 
         previewPosition = new Vector3(0.7f, 0, 0);
         previewRotation = Quaternion.Euler(new Vector3(0, 180f, 0));
@@ -32,6 +33,11 @@ public class StartMenuManager : MonoBehaviour
         teamAmount = teamPrefabs.Count;
 
         NewTeam();
+    }
+
+    private void Attack()
+    {
+        previewPiece.GetComponent<Animator>().SetTrigger("Attack");
     }
 
     private void PreviousTeam()
@@ -54,7 +60,7 @@ public class StartMenuManager : MonoBehaviour
 
     private void NewTeam() {
         GameObject.Destroy(previewPiece);
-        previewPiece = Instantiate(teamPrefabs[teamIndex].King, previewPosition, previewRotation);
+        previewPiece = Instantiate(teamPrefabs[teamIndex].Queen, previewPosition, previewRotation);
         gameParameters.whiteTeam = teamPrefabs[teamIndex].team;
     }
 

@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class ActionManager : MonoBehaviour
 {
+    [Header("Movement Values")]
     public float movingSpeed = 1;
     public float distanceToHit = 1;
     public float distanceToIdle = 0.5f;
+
+    [Header("Spell/FX Values")]
+    [Tooltip("FXAnimationTrigge script is mandatory on the animation")]
+    public GameObject Fx;
+    public GameObject FxRoot;
+    public Vector3 FxSpawnPositionOffset;
+    public float FxFirerate;
+    public float FxAmountToSpawn;
+    public float FxDelay;
 
     Animator animator;
     bool moving = false;
@@ -18,6 +28,7 @@ public class ActionManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         StartCoroutine(RandomAnimOffset());
+        targetPos = Camera.main.transform.position;
     }
 
     void Update()
@@ -67,4 +78,32 @@ public class ActionManager : MonoBehaviour
         animator.speed = 1f;
     }
 
+    IEnumerator SpawnSpell()
+    {
+        float timeToShoot = 1 / FxFirerate;
+        yield return new WaitForSeconds(FxDelay);
+        Vector3 castPosition;
+        Transform parent;
+        if (FxRoot != null)
+        {
+            castPosition = FxRoot.transform.position + FxSpawnPositionOffset;
+            Fx.transform.localScale = new Vector3(100, 100, 100);
+            parent = FxRoot.transform;
+        }
+        else {
+            castPosition = FxSpawnPositionOffset + transform.position;
+            parent = null;
+        }
+            
+        
+        for (int i = 0; i < FxAmountToSpawn; i++) {
+            GameObject VFX = Instantiate(Fx, castPosition, Quaternion.identity, parent);
+            VFX.transform.LookAt(targetPos);
+            yield return new WaitForSeconds(timeToShoot);
+        } 
+    }
+
+    public void TriggerSpell() {
+        StartCoroutine(SpawnSpell());
+    }
 }
