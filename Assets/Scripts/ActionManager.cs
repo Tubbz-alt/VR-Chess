@@ -8,19 +8,21 @@ public class ActionManager : MonoBehaviour
     public float movingSpeed = 1;
     public float distanceToHit = 1;
     public float distanceToIdle = 0.5f;
+    public bool teleports = false;
 
     [Header("Spell/FX Values")]
     [Tooltip("FXAnimationTrigge script is mandatory on the animation")]
     public GameObject Fx;
     public GameObject FxRoot;
     public Vector3 FxSpawnPositionOffset;
-    public float FxFirerate;
-    public float FxAmountToSpawn;
+    public float FxFirerate = 1;
+    public float FxAmountToSpawn = 1;
     public float FxDelay;
 
     Animator animator;
     bool moving = false;
     bool attack = false;
+    bool mustTeleport = false;
     Vector3 targetPos;
 
     // Start is called before the first frame update
@@ -35,7 +37,13 @@ public class ActionManager : MonoBehaviour
     {
         if (moving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, movingSpeed * Time.deltaTime);
+            if (mustTeleport) {
+                mustTeleport = false;
+                StartCoroutine(Teleport());
+            }
+
+            if(!teleports)
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, movingSpeed * Time.deltaTime);
 
             //If the character is close to target and needs to attacks
             if (Vector3.Distance(targetPos, transform.position) <= distanceToHit && attack)
@@ -62,6 +70,8 @@ public class ActionManager : MonoBehaviour
 
     IEnumerator Attack()
     {
+        yield return new WaitForSeconds(0.3f);
+        
         animator.SetTrigger("Attack");
 
         //yield on a new YieldInstruction that waits for the duration of the attack animation.
@@ -81,17 +91,23 @@ public class ActionManager : MonoBehaviour
     IEnumerator SpawnSpell()
     {
         float timeToShoot = 1 / FxFirerate;
-        yield return new WaitForSeconds(FxDelay);
         Vector3 castPosition;
         Transform parent;
+
+        yield return new WaitForSeconds(FxDelay);
+
+        //If a root is attached (hand, weapon etc..) the FX spawn is based on the root position
+        Debug.Log(FxRoot);
         if (FxRoot != null)
         {
             castPosition = FxRoot.transform.position + FxSpawnPositionOffset;
+            //The Root is scaled 0.01 so we must set the size correctly
             Fx.transform.localScale = new Vector3(100, 100, 100);
             parent = FxRoot.transform;
         }
-        else {
+        else {//else the spawn is based on the player position;
             castPosition = FxSpawnPositionOffset + transform.position;
+            Fx.transform.localScale = new Vector3(1, 1, 1);
             parent = null;
         }
             
@@ -105,5 +121,25 @@ public class ActionManager : MonoBehaviour
 
     public void TriggerSpell() {
         StartCoroutine(SpawnSpell());
+    }
+
+
+    IEnumerator Teleport() {
+        float dist = Vector3.Distance(targetPos, transform.position);
+        if (attack)
+            dist -= distanceToHit - 0.1f;
+
+        //Disparition
+        StartCoroutine(SpawnSpell());
+        enabled = false;
+        //Moving        
+        yield return new WaitForSeconds(0.5f);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, dist);
+        //Apprears again        
+        StartCoroutine(SpawnSpell());
+        enabled = true;
+    }
+    public void EnableTeleportation() {
+        mustTeleport = true;
     }
 }

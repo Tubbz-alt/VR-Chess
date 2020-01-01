@@ -797,7 +797,7 @@ PrefabInstance:
     - target: {fileID: 3996057763951467797, guid: ab98d332099ca4f4a838bf2879dad3d5,
         type: 3}
       propertyPath: whiteTeam
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3996057763951467797, guid: ab98d332099ca4f4a838bf2879dad3d5,
         type: 3}

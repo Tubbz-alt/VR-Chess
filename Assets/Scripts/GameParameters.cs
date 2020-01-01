@@ -16,11 +16,37 @@ public class GameParameters : MonoBehaviour
         public GameObject King;
         public GameObject Queen;
         public GameObject Map;
+
+        public GameObject GetPrefab(Pieces pieces) {
+            switch (pieces) {
+                case Pieces.King:
+                    return King;
+
+                case Pieces.Queen:
+                    return Queen;
+
+                case Pieces.Bishop:
+                    return Bishop;
+
+                case Pieces.Knight:
+                    return Knight;
+
+                case Pieces.Rook:
+                    return Rook;
+
+                case Pieces.Pawn:
+                    return Pawn;
+
+                default:
+                    return King;
+            }       
+        }
     }
 
     public List<TeamPrefabs> teamPrefabs;
     [SerializeField]
     public enum Team {Deads, Goblins, Samurais};
+    public enum Pieces { King, Queen, Bishop, Knight, Rook, Pawn};
 
     public Team whiteTeam = Team.Deads;
     public Team blackTeam = Team.Goblins;
