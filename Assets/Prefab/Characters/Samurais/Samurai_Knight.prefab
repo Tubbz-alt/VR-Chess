@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 472772}
   - component: {fileID: 9562990}
   - component: {fileID: 4635702813225966861}
+  - component: {fileID: 2448123036183345612}
   m_Layer: 0
   m_Name: Samurai_Knight
   m_TagString: Untagged
@@ -739,6 +740,20 @@ MonoBehaviour:
   FxFirerate: 1
   FxAmountToSpawn: 1
   FxDelay: 0
+--- !u!136 &2448123036183345612
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &117574
 GameObject:
   m_ObjectHideFlags: 0

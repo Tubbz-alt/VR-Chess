@@ -3351,6 +3351,8 @@ GameObject:
   - component: {fileID: 497534}
   - component: {fileID: 9508676}
   - component: {fileID: 1702167590671064800}
+  - component: {fileID: 8131373395583134267}
+  - component: {fileID: 3371066794690011811}
   m_Layer: 0
   m_Name: Goblin_King
   m_TagString: Untagged
@@ -3423,6 +3425,43 @@ MonoBehaviour:
   movingSpeed: 1
   distanceToHit: 1
   distanceToIdle: 0.5
+  teleports: 0
+  Fx: {fileID: 0}
+  FxRoot: {fileID: 0}
+  FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
+  FxFirerate: 1
+  FxAmountToSpawn: 1
+  FxDelay: 0
+--- !u!114 &8131373395583134267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159e402069a893b44b6c77c116fa9e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 0
+  _player: 1
+  pieceImage: {fileID: 21300000, guid: 3ff1b0ab48f9298448b4a8e057f8d223, type: 3}
+  position: {x: 0, y: 0}
+--- !u!136 &3371066794690011811
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &174376
 GameObject:
   m_ObjectHideFlags: 0

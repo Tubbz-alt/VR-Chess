@@ -1860,6 +1860,8 @@ GameObject:
   - component: {fileID: 467240}
   - component: {fileID: 9506036}
   - component: {fileID: 4619689099853255797}
+  - component: {fileID: 114773397675817734}
+  - component: {fileID: 8201280565681074851}
   m_Layer: 0
   m_Name: Dead_Knight
   m_TagString: Piece
@@ -1932,12 +1934,43 @@ MonoBehaviour:
   movingSpeed: 4
   distanceToHit: 1
   distanceToIdle: 0.1
+  teleports: 0
   Fx: {fileID: 195742, guid: c83fb3ef04bb383408bb2064b89690b2, type: 3}
   FxRoot: {fileID: 159550}
   FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
   FxFirerate: 1
   FxAmountToSpawn: 1
   FxDelay: 0
+--- !u!114 &114773397675817734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159e402069a893b44b6c77c116fa9e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 4
+  _player: 0
+  pieceImage: {fileID: 21300000, guid: f64c58dbb316b994fa25d2d111a2d0e6, type: 3}
+  position: {x: 0, y: 0}
+--- !u!136 &8201280565681074851
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &145006
 GameObject:
   m_ObjectHideFlags: 0

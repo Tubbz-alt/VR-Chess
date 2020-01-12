@@ -4117,6 +4117,8 @@ GameObject:
   - component: {fileID: 410742}
   - component: {fileID: 9585324}
   - component: {fileID: 114588107194998318}
+  - component: {fileID: 300540970468758226}
+  - component: {fileID: 7282819562307934929}
   m_Layer: 0
   m_Name: Goblin_Bishop
   m_TagString: Untagged
@@ -4189,6 +4191,43 @@ MonoBehaviour:
   movingSpeed: 1
   distanceToHit: 1
   distanceToIdle: 0.5
+  teleports: 0
+  Fx: {fileID: 0}
+  FxRoot: {fileID: 0}
+  FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
+  FxFirerate: 1
+  FxAmountToSpawn: 1
+  FxDelay: 0
+--- !u!114 &300540970468758226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159e402069a893b44b6c77c116fa9e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 2
+  _player: 1
+  pieceImage: {fileID: 21300000, guid: 2379adf248a50f649bc3c880ca377664, type: 3}
+  position: {x: 0, y: 0}
+--- !u!136 &7282819562307934929
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &196770
 GameObject:
   m_ObjectHideFlags: 0

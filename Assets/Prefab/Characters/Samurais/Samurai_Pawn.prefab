@@ -1850,6 +1850,7 @@ GameObject:
   - component: {fileID: 458396}
   - component: {fileID: 9581988}
   - component: {fileID: 114882710515574224}
+  - component: {fileID: 136008960213846114}
   m_Layer: 0
   m_Name: Samurai_Pawn
   m_TagString: Untagged
@@ -1913,12 +1914,27 @@ MonoBehaviour:
   movingSpeed: 1
   distanceToHit: 1
   distanceToIdle: 0.5
+  teleports: 0
   Fx: {fileID: 0}
   FxRoot: {fileID: 0}
   FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
   FxFirerate: 0
   FxAmountToSpawn: 0
   FxDelay: 0
+--- !u!136 &136008960213846114
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &156602
 GameObject:
   m_ObjectHideFlags: 0

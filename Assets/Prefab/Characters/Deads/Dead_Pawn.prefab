@@ -1761,6 +1761,8 @@ GameObject:
   - component: {fileID: 471940}
   - component: {fileID: 9588672}
   - component: {fileID: 7111892448063739653}
+  - component: {fileID: 6510386008128774025}
+  - component: {fileID: 2086760345854743194}
   m_Layer: 0
   m_Name: Dead_Pawn
   m_TagString: Piece
@@ -1833,6 +1835,43 @@ MonoBehaviour:
   movingSpeed: 0
   distanceToHit: 1
   distanceToIdle: 0.3
+  teleports: 0
+  Fx: {fileID: 0}
+  FxRoot: {fileID: 0}
+  FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
+  FxFirerate: 1
+  FxAmountToSpawn: 1
+  FxDelay: 0
+--- !u!114 &6510386008128774025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159e402069a893b44b6c77c116fa9e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 5
+  _player: 0
+  pieceImage: {fileID: 21300000, guid: d2629b5c34becf5439507234f6ec935b, type: 3}
+  position: {x: 0, y: 0}
+--- !u!136 &2086760345854743194
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &141464
 GameObject:
   m_ObjectHideFlags: 0

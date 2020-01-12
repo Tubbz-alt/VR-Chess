@@ -797,6 +797,8 @@ GameObject:
   - component: {fileID: 404400}
   - component: {fileID: 9520566}
   - component: {fileID: 114113649060977948}
+  - component: {fileID: 3685509218808081461}
+  - component: {fileID: 2264969579074945956}
   m_Layer: 0
   m_Name: Goblin_Pawn
   m_TagString: Untagged
@@ -869,6 +871,43 @@ MonoBehaviour:
   movingSpeed: 1
   distanceToHit: 1
   distanceToIdle: 0.5
+  teleports: 0
+  Fx: {fileID: 0}
+  FxRoot: {fileID: 0}
+  FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
+  FxFirerate: 1
+  FxAmountToSpawn: 1
+  FxDelay: 0
+--- !u!114 &3685509218808081461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159e402069a893b44b6c77c116fa9e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 5
+  _player: 1
+  pieceImage: {fileID: 21300000, guid: 88cd70eba5cfe5b40ba028b48eed2a6d, type: 3}
+  position: {x: 0, y: 0}
+--- !u!136 &2264969579074945956
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &115104
 GameObject:
   m_ObjectHideFlags: 0

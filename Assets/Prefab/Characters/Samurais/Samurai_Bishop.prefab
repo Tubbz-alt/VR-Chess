@@ -2014,6 +2014,7 @@ GameObject:
   - component: {fileID: 450134}
   - component: {fileID: 9595576}
   - component: {fileID: 114789168050025086}
+  - component: {fileID: 136570936578487570}
   m_Layer: 0
   m_Name: Samurai_Bishop
   m_TagString: Untagged
@@ -2077,12 +2078,27 @@ MonoBehaviour:
   movingSpeed: 1
   distanceToHit: 1
   distanceToIdle: 0.5
+  teleports: 0
   Fx: {fileID: 0}
   FxRoot: {fileID: 0}
   FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
   FxFirerate: 0
   FxAmountToSpawn: 0
   FxDelay: 0
+--- !u!136 &136570936578487570
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1 &156288
 GameObject:
   m_ObjectHideFlags: 0
