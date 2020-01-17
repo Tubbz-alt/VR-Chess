@@ -9,14 +9,17 @@ public class StartMenuManager : MonoBehaviour
 {  
     List<GameParameters.TeamPrefabs> teamPrefabs;
     GameParameters gameParameters;
-    GameObject previewPiece;
+    GameObject previewPieceBlack;
+    GameObject previewPieceWhite;
 
-    Vector3 previewPosition;
+    Vector3 previewPositionBlack;
+    Vector3 previewPositionWhite;
     Quaternion previewRotation;
 
 
     int teamAmount;
-    int teamIndex = 0;
+    int teamIndexBlack = 0;
+    int teamIndexWhite = 1;
 
     int prefabIndex = 0;
 
@@ -26,31 +29,40 @@ public class StartMenuManager : MonoBehaviour
     void Start()
     {
         gameParameters = GameObject.FindGameObjectWithTag("GameParameters").GetComponent<GameParameters>();
-        GameObject.Find("StartButton").GetComponent<Button>().onClick.AddListener(StartGame);
+        GameObject.Find("StartButtonBlack").GetComponent<Button>().onClick.AddListener(StartGameBlack);
+        GameObject.Find("StartButtonWhite").GetComponent<Button>().onClick.AddListener(StartGameWhite);
+
         //Buttons to handle previews
-        GameObject.Find("NextButton").GetComponent<Button>().onClick.AddListener(NextTeam);
-        GameObject.Find("PreviousButton").GetComponent<Button>().onClick.AddListener(PreviousTeam);
-        GameObject.Find("PreviousPrefabButton").GetComponent<Button>().onClick.AddListener(PreviousPrefab);
-        GameObject.Find("NextPrefabButton").GetComponent<Button>().onClick.AddListener(NextPrefab);
+        GameObject.Find("NextButtonBlack").GetComponent<Button>().onClick.AddListener(NextTeamBlack);
+        GameObject.Find("PreviousButtonBlack").GetComponent<Button>().onClick.AddListener(PreviousTeamBlack);
+        GameObject.Find("NextButtonWhite").GetComponent<Button>().onClick.AddListener(NextTeamWhite);
+        GameObject.Find("PreviousButtonWhite").GetComponent<Button>().onClick.AddListener(PreviousTeamWhite);
+
+
+        //GameObject.Find("PreviousPrefabButton").GetComponent<Button>().onClick.AddListener(PreviousPrefab);
+        //GameObject.Find("NextPrefabButton").GetComponent<Button>().onClick.AddListener(NextPrefab);
 
         GameObject.Find("AttackButton").GetComponent<Button>().onClick.AddListener(Attack);
         GameObject.Find("MoveButton").GetComponent<Button>().onClick.AddListener(Move);
 
-        text = GameObject.Find("PrefabName").GetComponent<Text>();
+        //text = GameObject.Find("PrefabName").GetComponent<Text>();
 
-        previewPosition = new Vector3(0.7f, 0, 0);
+        previewPositionBlack = new Vector3(3f, 0, 0);
+        previewPositionWhite = new Vector3(-3f, 0, 0);
         previewRotation = Quaternion.Euler(new Vector3(0, 180f, 0));
 
 
         teamPrefabs = gameParameters.teamPrefabs;
         teamAmount = teamPrefabs.Count;
 
-        NewPrefab();
+        NewPrefabBlack();
+        NewPrefabWhite();
     }
 
     private void Attack()
     {
-        previewPiece.GetComponent<Animator>().SetTrigger("Attack");
+        previewPieceBlack.GetComponent<Animator>().SetTrigger("Attack");
+        previewPieceWhite.GetComponent<Animator>().SetTrigger("Attack");
     }
 
     private void Move()
@@ -59,34 +71,62 @@ public class StartMenuManager : MonoBehaviour
     }
 
     IEnumerator MoveEnumerator() {
-        previewPiece.GetComponent<Animator>().SetBool("Moving", true);
+        previewPieceBlack.GetComponent<Animator>().SetBool("Moving", true);
+        previewPieceWhite.GetComponent<Animator>().SetBool("Moving", true);
         yield return new WaitForSeconds(2f);
-        previewPiece.GetComponent<Animator>().SetBool("Moving", false);
+        previewPieceBlack.GetComponent<Animator>().SetBool("Moving", false);
+        previewPieceWhite.GetComponent<Animator>().SetBool("Moving", false);
     }
 
-    private void PreviousTeam()
+    private void PreviousTeamBlack()
     {
-        if (teamIndex > 0)
-            teamIndex -= 1;
+        if (teamIndexBlack > 0)
+            teamIndexBlack -= 1;
         else
-            teamIndex = teamAmount - 1;
-        NewPrefab();
+            teamIndexBlack = teamAmount - 1;
+        NewPrefabBlack();
     }
 
-    private void NextTeam()
+    private void NextTeamBlack()
     {
-        if (teamIndex < teamAmount - 1)
-            teamIndex += 1;
+        if (teamIndexBlack < teamAmount - 1)
+            teamIndexBlack += 1;
         else
-            teamIndex = 0;
-        NewPrefab();
+            teamIndexBlack = 0;
+        NewPrefabBlack();
     }
 
-    private void NewPrefab() {
-        GameObject.Destroy(previewPiece);
-        previewPiece = Instantiate(teamPrefabs[teamIndex].GetPrefab((GameParameters.Pieces)prefabIndex), previewPosition, previewRotation);
-        gameParameters.whiteTeam = teamPrefabs[teamIndex].team;
-        text.text =  ((GameParameters.Team)teamIndex).ToString() +"\n" + ((GameParameters.Pieces)prefabIndex).ToString();
+    private void PreviousTeamWhite()
+    {
+        if (teamIndexWhite > 0)
+            teamIndexWhite -= 1;
+        else
+            teamIndexWhite = teamAmount - 1;
+        NewPrefabWhite();
+    }
+
+    private void NextTeamWhite()
+    {
+        if (teamIndexWhite < teamAmount - 1)
+            teamIndexWhite += 1;
+        else
+            teamIndexWhite = 0;
+        NewPrefabWhite();
+    }
+
+    private void NewPrefabBlack() {
+        GameObject.Destroy(previewPieceBlack);
+        previewPieceBlack = Instantiate(teamPrefabs[teamIndexBlack].GetPrefab((GameParameters.Pieces)prefabIndex), previewPositionBlack, previewRotation);
+        gameParameters.blackTeam = teamPrefabs[teamIndexBlack].team;
+        //text.text =  ((GameParameters.Team)teamIndexBlack).ToString() +"\n" + ((GameParameters.Pieces)prefabIndex).ToString();
+    }
+
+    private void NewPrefabWhite()
+    {
+        GameObject.Destroy(previewPieceWhite);
+        previewPieceWhite = Instantiate(teamPrefabs[teamIndexWhite].GetPrefab((GameParameters.Pieces)prefabIndex), previewPositionWhite, previewRotation);
+        gameParameters.whiteTeam = teamPrefabs[teamIndexWhite].team;
+        //text.text = ((GameParameters.Team)teamIndexWhite).ToString() + "\n" + ((GameParameters.Pieces)prefabIndex).ToString();
     }
 
     private void PreviousPrefab()
@@ -95,7 +135,7 @@ public class StartMenuManager : MonoBehaviour
             prefabIndex -= 1;
         else
             prefabIndex = 5;
-        NewPrefab();
+        NewPrefabBlack();
     }
 
     private void NextPrefab() {
@@ -103,11 +143,18 @@ public class StartMenuManager : MonoBehaviour
             prefabIndex += 1;
         else
             prefabIndex = 0;
-        NewPrefab();
+        NewPrefabBlack();
     }
 
 
-    void StartGame() {
+    void StartGameBlack() {
+        gameParameters.playerStart = false;
+        SceneManager.LoadScene("Game");
+    }
+
+    void StartGameWhite()
+    {
+        gameParameters.playerStart = true;
         SceneManager.LoadScene("Game");
     }
 }

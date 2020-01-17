@@ -4,33 +4,39 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     AlphaBeta ab = new AlphaBeta();
-    private bool _kingDead = false;
+    public bool kingDead = false;
     float timer = 0;
+    float delay = 0;
     static Board _board;
 
-	void Start () {}
+    public bool playerTurn;
+
+    void Start () {
+        playerTurn = GameObject.Find("GameParameters").GetComponent<GameParameters>().playerStart;
+    }
 
 	void Update ()
     {
-        if (_kingDead)
+        if (kingDead)
         {
             Debug.Log("WINNER!");
             //UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
         }
-        if (!playerTurn && timer < 3)
+        else
         {
-            timer += Time.deltaTime;
-        }
-        else if (!playerTurn && timer >= 3)
-        {
-            Move move = ab.GetMove();
-            _DoAIMove(move);
-            timer = 0;
+            if (!playerTurn && timer < delay)
+            {
+                timer += Time.deltaTime;
+            }
+            else if (!playerTurn && timer >= delay)
+            {
+                Move move = ab.GetMove();
+                _DoAIMove(move);
+                timer = 0;
+            }
         }
 	}
-
-    public bool playerTurn = true;
 
     public static void boardSetup() {
         _board = Board.Instance;
@@ -45,7 +51,7 @@ public class GameManager : MonoBehaviour
         if (secondPosition.CurrentPiece && secondPosition.CurrentPiece.Type == Piece.pieceType.KING)
         {
             SwapPieces(move);
-            _kingDead = true;
+            kingDead = true;
         }
         else
         {
@@ -64,18 +70,23 @@ public class GameManager : MonoBehaviour
         Tile firstTile = move.firstPosition;
         Tile secondTile = move.secondPosition;
 
-        firstTile.CurrentPiece.MovePiece(new Vector3(-move.secondPosition.Position.x*2+7, 0, move.secondPosition.Position.y*2-7));
+        float x1 = -move.firstPosition.Position.x * 2 + 7;
+        float z1 = move.firstPosition.Position.y * 2 - 7;
+        float x2 = -move.secondPosition.Position.x * 2 + 7;
+        float z2 = move.secondPosition.Position.y * 2 - 7;
+
+        delay = 3 + Mathf.Sqrt((x1 - x2) * (x1 - x2) + (z1 - z2) * (z1 - z2)) / firstTile.CurrentPiece.GetComponent<ActionManager>().movingSpeed;
 
         if (secondTile.CurrentPiece != null)
         {
-            if (secondTile.CurrentPiece.Type == Piece.pieceType.KING)
-            {
-                _kingDead = true;
-            }
-                
-            Destroy(secondTile.CurrentPiece.gameObject);
+            firstTile.CurrentPiece.MovePiece(new Vector3(x2, 0.275f, z2), true);
+
+            StartCoroutine(DestroyPiece(secondTile.CurrentPiece));            
         }
-            
+        else
+        {
+            firstTile.CurrentPiece.MovePiece(new Vector3(x2, 0.275f, z2), false);
+        }
 
         secondTile.CurrentPiece = move.pieceMoved;
         firstTile.CurrentPiece = null;
@@ -83,5 +94,17 @@ public class GameManager : MonoBehaviour
         secondTile.CurrentPiece.HasMoved = true;
 
         playerTurn = !playerTurn;
+    }
+
+    IEnumerator DestroyPiece(Piece pieceToDestroy)
+    {
+        yield return new WaitForSeconds(delay-2.3f);
+        pieceToDestroy.destroyType();
+        Destroy(pieceToDestroy.gameObject);
+
+        if (pieceToDestroy.Type == Piece.pieceType.KING)
+        {
+            kingDead = true;
+        }
     }
 }

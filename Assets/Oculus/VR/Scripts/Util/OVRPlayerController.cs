@@ -282,10 +282,14 @@ public class OVRPlayerController : MonoBehaviour
 		else
 			FallSpeed += ((Physics.gravity.y * (GravityModifier * 0.002f)) * SimulationRate * Time.deltaTime);
 
+        if (GravityModifier == 0)
+        {
+            FallSpeed = 0;
+        }
+
 		moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
 
-
-		if (Controller.isGrounded && MoveThrottle.y <= transform.lossyScale.y * 0.001f)
+        if (Controller.isGrounded && MoveThrottle.y <= transform.lossyScale.y * 0.001f)
 		{
 			// Offset correction for uneven ground
 			float bumpUpOffset = Mathf.Max(Controller.stepOffset, new Vector3(moveDirection.x, 0, moveDirection.z).magnitude);
@@ -347,7 +351,7 @@ public class OVRPlayerController : MonoBehaviour
 
 			// No positional movement if we are in the air
 			if (!Controller.isGrounded)
-				MoveScale = 0.0f;
+				MoveScale = 0.5f;
 
 			MoveScale *= SimulationRate * Time.deltaTime;
 
@@ -372,9 +376,20 @@ public class OVRPlayerController : MonoBehaviour
 			if (moveRight)
 				MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.right);
 
+            if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+            {
+                GravityModifier = -0.1f;
+                if (this.transform.localPosition.y >= 10)
+                {
+                    GravityModifier = 0;
+                }
+            }
+            else
+            {
+                GravityModifier = 0.1f;
+            }
 
-
-			moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
+            moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 
 #if !UNITY_ANDROID // LeftTrigger not avail on Android game pad
 			moveInfluence *= 1.0f + OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
@@ -403,7 +418,9 @@ public class OVRPlayerController : MonoBehaviour
 			if (primaryAxis.x > 0.0f)
 				MoveThrottle += ort * (primaryAxis.x * transform.lossyScale.x * moveInfluence * BackAndSideDampen *
 									   Vector3.right);
-		}
+
+            
+        }
 
 		if (EnableRotation)
 		{

@@ -56,6 +56,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -185,6 +186,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -345,6 +347,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -576,6 +579,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -674,6 +678,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -987,6 +992,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1306,7 +1312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 0
   _player: 0
-  pieceImage: {fileID: 21300000, guid: aa8b9d5785f16cb449aee547e63a286e, type: 3}
+  pieceImageWhite: {fileID: 21300000, guid: 3ff1b0ab48f9298448b4a8e057f8d223, type: 3}
+  pieceImageBlack: {fileID: 21300000, guid: aa8b9d5785f16cb449aee547e63a286e, type: 3}
   position: {x: 0, y: 0}
 --- !u!136 &136502474101874650
 CapsuleCollider:
@@ -1418,6 +1425,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1486,6 +1494,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1645,6 +1654,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1777,6 +1787,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1909,6 +1920,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2081,6 +2093,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2158,6 +2171,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2300,6 +2314,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2368,6 +2383,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2537,6 +2553,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2614,6 +2631,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2753,6 +2771,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2821,6 +2840,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3240,6 +3260,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3369,6 +3390,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3507,6 +3529,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3584,6 +3607,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3714,6 +3738,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3967,6 +3992,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4096,6 +4122,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4225,6 +4252,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4425,6 +4453,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4667,6 +4696,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 162430, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193818, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 497388, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4723,13 +4760,85 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 193818, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.a
+      value: 0.43529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 162430, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.b
+      value: 0.05476761
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 0.6784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 20432
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.3372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 29298
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime2
+      value: 60138
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19813616, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
@@ -4825,86 +4934,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19813616, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key2.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key0.a
-      value: 0.43529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key2.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key2.b
-      value: 0.05476761
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key2.a
-      value: 0.6784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.atime1
-      value: 20432
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.atime2
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.ctime0
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.r
-      value: 0.3372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.g
-      value: 0.91764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.key1.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.ctime1
-      value: 29298
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: ColorModule.gradient.maxGradient.ctime2
-      value: 60138
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.6037736
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19804014, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19877976, guid: e9ac2b65e98b5154597f339961c0f67a, type: 3}
@@ -5018,11 +5047,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6200163154856744956}
     m_Modifications:
-    - target: {fileID: 4253213294871031321, guid: 1b54f8c1a8e8ea84daf92b8407066357,
-        type: 3}
-      propertyPath: m_Name
-      value: CryptoEffect
-      objectReference: {fileID: 0}
     - target: {fileID: 1428928570154754788, guid: 1b54f8c1a8e8ea84daf92b8407066357,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5112,6 +5136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: color.b
       value: 0.018810749
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253213294871031321, guid: 1b54f8c1a8e8ea84daf92b8407066357,
+        type: 3}
+      propertyPath: m_Name
+      value: CryptoEffect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b54f8c1a8e8ea84daf92b8407066357, type: 3}

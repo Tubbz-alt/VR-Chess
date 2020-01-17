@@ -23,29 +23,29 @@ public class AlphaBeta
     {
         _board = Board.Instance;
         bestMove = _CreateMove(_board.GetTileFromBoard(new Vector2(0, 0)), _board.GetTileFromBoard(new Vector2(0, 0)));
-        AB(maxDepth, -100000000, 1000000000, true);
+        AB(maxDepth, -100000000, 1000000000, true, !GameObject.Find("GameParameters").GetComponent<GameParameters>().playerStart);
         return bestMove;
     }
 
-    int AB(int depth, int alpha, int beta, bool max)
+    int AB(int depth, int alpha, int beta, bool max, bool isWhite)
     {
         _GetBoardState();
 
         if (depth == 0)
         {
-            return _Evaluate();
+            return _Evaluate(!GameObject.Find("GameParameters").GetComponent<GameParameters>().playerStart);
         }
         if (max)
         {
             int score = -10000000;
-            List<Move> allMoves = _GetMoves(Piece.playerColor.BLACK);
+            List<Move> allMoves = isWhite ? _GetMoves(Piece.playerColor.WHITE) : _GetMoves(Piece.playerColor.BLACK);
             foreach (Move move in allMoves)
             {
                 moveStack.Push(move);
 
                 _DoFakeMove(move.firstPosition, move.secondPosition);
 
-                score = AB(depth - 1, alpha, beta, false);
+                score = AB(depth - 1, alpha, beta, false, !GameObject.Find("GameParameters").GetComponent<GameParameters>().playerStart);
 
                 _UndoFakeMove();
 
@@ -68,14 +68,14 @@ public class AlphaBeta
         else
         {
             int score = 10000000;
-            List<Move> allMoves = _GetMoves(Piece.playerColor.WHITE);
+            List<Move> allMoves = isWhite ? _GetMoves(Piece.playerColor.BLACK) : _GetMoves(Piece.playerColor.WHITE);
             foreach (Move move in allMoves)
             {
                 moveStack.Push(move);
 
                 _DoFakeMove(move.firstPosition, move.secondPosition);
 
-                score = AB(depth - 1, alpha, beta, true);
+                score = AB(depth - 1, alpha, beta, true, !GameObject.Find("GameParameters").GetComponent<GameParameters>().playerStart);
 
                 _UndoFakeMove();
 
@@ -142,7 +142,7 @@ public class AlphaBeta
         return turnMove;
     }
 
-    int _Evaluate()
+    int _Evaluate(bool isWhite)
     {
         float pieceDifference = 0;
         float whiteWeight = 0;
@@ -156,7 +156,7 @@ public class AlphaBeta
         {
             blackWeight += _weight.GetBoardWeight(tile.CurrentPiece.Type, tile.CurrentPiece.position, Piece.playerColor.BLACK);
         }
-        pieceDifference = (_blackScore + (blackWeight / 100)) - (_whiteScore + (whiteWeight / 100));
+        pieceDifference = isWhite ? (_whiteScore + (whiteWeight / 100)) - (_blackScore + (blackWeight / 100))  : (_blackScore + (blackWeight / 100)) - (_whiteScore + (whiteWeight / 100));
         return Mathf.RoundToInt(pieceDifference * 100);
     }
 

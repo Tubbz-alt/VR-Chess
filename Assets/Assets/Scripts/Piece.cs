@@ -12,13 +12,19 @@ public class Piece : MonoBehaviour
     public pieceType Type
     {
         get { return _type; }
+        set { _type = value; }
     }
     public playerColor Player
     {
         get { return _player; }
+        set { _player = value; }
     }
 
-    public Sprite pieceImage = null;
+    public Sprite pieceImageWhite = null;
+    public Sprite pieceImageBlack = null;
+
+    private playerColor humanColor;
+
     public Vector2 position;
     private Vector3 moveTo;
     private GameManager manager;
@@ -36,7 +42,7 @@ public class Piece : MonoBehaviour
 
     void Action()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One) && _player == playerColor.WHITE && manager.playerTurn)
+        if (OVRInput.GetDown(OVRInput.Button.One) && _player == humanColor && manager.playerTurn)
         {
             moves.Clear();
             GameObject[] objects = GameObject.FindGameObjectsWithTag("Highlight");
@@ -70,25 +76,60 @@ public class Piece : MonoBehaviour
         }
     }
 
-    public void MovePiece(Vector3 position)
+
+    public void MovePiece(Vector3 position, bool attack)
     {
         moveTo = position;
+        this.GetComponent<ActionManager>().MoveTo(position.x, position.z, attack);
+    }
+
+    void printType()
+    {
+        GameObject go = new GameObject("type of " + this.name);
+        go.transform.position = new Vector3(this.transform.position.x, 2.5f, this.transform.position.z);
+
+        SpriteRenderer renderer = go.AddComponent<SpriteRenderer>();
+        renderer.sprite = _player == playerColor.WHITE ? pieceImageWhite : pieceImageBlack;
+    }
+
+    public void destroyType()
+    {
+        if (GameObject.Find("type of " + this.name) != null)
+        {
+            GameObject go = GameObject.Find("type of " + this.name);
+            Destroy(go);
+        }
     }
 
     void Start()
     {
         moveTo = this.transform.position;
-        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        if (GameObject.FindGameObjectWithTag("GameController") != null)
+        {
+            manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+            humanColor = GameObject.Find("GameParameters").GetComponent<GameParameters>().playerStart ? playerColor.WHITE : playerColor.BLACK;
+        }
+       
         objectPointer = GameObject.Find("RaycastStart").GetComponent<ObjectPointer>();
     }
 
     void Update()
     {
-        transform.position = Vector3.Lerp(this.transform.position, moveTo, 3 * Time.deltaTime);
-
-        if (objectPointer.go.name.Equals(this.name))
+        if (objectPointer != null && objectPointer.go.name.Equals(this.name))
         {
-            Action();
+            if (GameObject.Find("type of " + this.name) == null)
+            {
+                printType();
+            }
+
+            if (!manager.kingDead)
+            {
+                Action();
+            }
+        }
+        else 
+        {
+            destroyType();
         }
     }
 }

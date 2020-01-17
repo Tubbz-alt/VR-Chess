@@ -51,6 +51,8 @@ public class GameParameters : MonoBehaviour
     public Team whiteTeam = Team.Deads;
     public Team blackTeam = Team.Goblins;
 
+    public bool playerStart = true;
+
 
     private void Awake()
     {

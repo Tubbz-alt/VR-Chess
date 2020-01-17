@@ -27,10 +27,18 @@ public class ObjectPointer : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.One)) {
             GetPointedGo();
         }
+
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag("Highlight");
+            foreach (GameObject o in objects)
+            {
+                Destroy(o);
+            }
+        }
     }
 
     public GameObject GetPointedGo() {
-        Debug.Log(go.name);
         return go;
     }
 }

@@ -59,6 +59,7 @@ public class Game_Manager_Start : MonoBehaviour
             go = Instantiate(teamPrefabs[(int)team].Pawn, new Vector3(i - 8, yOffsetPiece, 5), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
             go.GetComponent<Piece>().position = new Vector2(GetXPos(isWhite, (i-1)/2), yPos);
             go.name = GetXPos(isWhite, (i - 1) / 2) + " " + yPos;
+            go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
         }
 
         if (isWhite)
@@ -67,10 +68,12 @@ public class Game_Manager_Start : MonoBehaviour
             go = Instantiate(teamPrefabs[(int)team].King, new Vector3(-1, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
             go.GetComponent<Piece>().position = new Vector2(4, yPos);
             go.name = "4 " + yPos;
+            go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
 
             go = Instantiate(teamPrefabs[(int)team].Queen, new Vector3(1, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
             go.GetComponent<Piece>().position = new Vector2(3, yPos);
             go.name = "3 " + yPos;
+            go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
         }
         else
         {
@@ -78,36 +81,43 @@ public class Game_Manager_Start : MonoBehaviour
             go = Instantiate(teamPrefabs[(int)team].King, new Vector3(1, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
             go.GetComponent<Piece>().position = new Vector2(4, yPos);
             go.name = "4 " + yPos;
+            go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
 
             go = Instantiate(teamPrefabs[(int)team].Queen, new Vector3(-1, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
             go.GetComponent<Piece>().position = new Vector2(3, yPos);
             go.name = "3 " + yPos;
-
+            go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
         }
 
         go = Instantiate(teamPrefabs[(int)team].Rook, new Vector3(-7, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
         go.GetComponent<Piece>().position = new Vector2(GetXPos(isWhite, 0), yPos);
         go.name = GetXPos(isWhite, 0) + " " + yPos;
+        go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
 
         go = Instantiate(teamPrefabs[(int)team].Rook, new Vector3(7, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
         go.GetComponent<Piece>().position = new Vector2(GetXPos(isWhite, 7), yPos);
         go.name = GetXPos(isWhite, 7) + " " + yPos;
+        go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
 
         go = Instantiate(teamPrefabs[(int)team].Knight, new Vector3(-5, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
         go.GetComponent<Piece>().position = new Vector2(GetXPos(isWhite, 1), yPos);
         go.name = GetXPos(isWhite, 1) + " " + yPos;
+        go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
 
         go = Instantiate(teamPrefabs[(int)team].Knight, new Vector3(5, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
         go.GetComponent<Piece>().position = new Vector2(GetXPos(isWhite, 6), yPos);
         go.name = GetXPos(isWhite, 6) + " " + yPos;
+        go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
 
         go = Instantiate(teamPrefabs[(int)team].Bishop, new Vector3(-3, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
         go.GetComponent<Piece>().position = new Vector2(GetXPos(isWhite, 2), yPos);
         go.name = GetXPos(isWhite, 2) + " " + yPos;
+        go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
 
         go = Instantiate(teamPrefabs[(int)team].Bishop, new Vector3(3, yOffsetPiece, 7), Quaternion.Euler(new Vector3(0, 180, 0)), parent);
         go.GetComponent<Piece>().position = new Vector2(GetXPos(isWhite, 5), yPos);
         go.name = GetXPos(isWhite, 5) + " " + yPos;
+        go.GetComponent<Piece>().Player = isWhite ? Piece.playerColor.WHITE : Piece.playerColor.BLACK;
     }
 
     int GetXPos(bool isWhite, int x) {
