@@ -9382,6 +9382,7 @@ GameObject:
   - component: {fileID: 436748}
   - component: {fileID: 19891236}
   - component: {fileID: 19942686}
+  - component: {fileID: 9193881896532046309}
   m_Layer: 0
   m_Name: FlamethrowerCartoonyFire
   m_TagString: Untagged
@@ -9658,7 +9659,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -9711,7 +9712,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -9764,7 +9765,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -9817,7 +9818,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -14106,6 +14107,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &9193881896532046309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8f3903d4b00a54ba8e1640989ffd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.5
 --- !u!1 &154332
 GameObject:
   m_ObjectHideFlags: 0

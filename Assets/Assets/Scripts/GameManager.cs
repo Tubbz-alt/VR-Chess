@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     public bool playerTurn;
 
+    public TMP_Text winText;
+
+    public GameObject player;
+
     void Start () {
         playerTurn = GameObject.Find("GameParameters").GetComponent<GameParameters>().playerStart;
     }
@@ -19,9 +26,11 @@ public class GameManager : MonoBehaviour
     {
         if (kingDead)
         {
+
             Debug.Log("WINNER!");
             //UnityEditor.EditorApplication.isPlaying = false;
-            Application.Quit();
+            winText.gameObject.SetActive(true);
+            winText.text = playerTurn ? "TU AS PERDU !!" : "TU AS GAGNÉ ! BRAVO MON FRERE !";
         }
         else
         {
@@ -36,7 +45,11 @@ public class GameManager : MonoBehaviour
                 timer = 0;
             }
         }
-	}
+        if (OVRInput.GetDown(OVRInput.Button.Three) && OVRInput.GetDown(OVRInput.Button.Four))
+        {
+            SceneManager.LoadScene("StartMenu");
+        }
+    }
 
     public static void boardSetup() {
         _board = Board.Instance;
@@ -75,7 +88,7 @@ public class GameManager : MonoBehaviour
         float x2 = -move.secondPosition.Position.x * 2 + 7;
         float z2 = move.secondPosition.Position.y * 2 - 7;
 
-        delay = 3 + Mathf.Sqrt((x1 - x2) * (x1 - x2) + (z1 - z2) * (z1 - z2)) / firstTile.CurrentPiece.GetComponent<ActionManager>().movingSpeed;
+        delay = 4 + Mathf.Sqrt((x1 - x2) * (x1 - x2) + (z1 - z2) * (z1 - z2)) / (firstTile.CurrentPiece.GetComponent<ActionManager>().movingSpeed +1);
 
         if (secondTile.CurrentPiece != null)
         {

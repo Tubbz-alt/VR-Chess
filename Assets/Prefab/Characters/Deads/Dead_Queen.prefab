@@ -116,14 +116,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingSpeed: 7
-  distanceToHit: 1
+  distanceToHit: 6
   distanceToIdle: 0.1
   teleports: 0
-  Fx: {fileID: 134572, guid: 7c1b627e705f998448adac9689c44505, type: 3}
-  FxRoot: {fileID: 143286}
-  FxSpawnPositionOffset: {x: 0, y: 0, z: 0}
-  FxFirerate: 1
-  FxAmountToSpawn: 1
+  Fx: {fileID: 1391574063814312, guid: 68a0ef4dcae9aa14687734d594059d40, type: 3}
+  FxRoot: {fileID: 0}
+  FxSpawnPositionOffset: {x: 0, y: 12, z: 0}
+  FxFirerate: 10
+  FxAmountToSpawn: 6
   FxDelay: 0
 --- !u!114 &7633262561120443026
 MonoBehaviour:

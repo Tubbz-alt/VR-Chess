@@ -282,10 +282,6 @@ public class OVRPlayerController : MonoBehaviour
 		else
 			FallSpeed += ((Physics.gravity.y * (GravityModifier * 0.002f)) * SimulationRate * Time.deltaTime);
 
-        if (GravityModifier == 0)
-        {
-            FallSpeed = 0;
-        }
 
 		moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
 
@@ -304,8 +300,21 @@ public class OVRPlayerController : MonoBehaviour
 
 		Vector3 predictedXZ = Vector3.Scale((Controller.transform.localPosition + moveDirection), new Vector3(1, 0, 1));
 
-		// Move contoller
-		Controller.Move(moveDirection);
+		if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+		{
+			if (Controller.transform.localPosition.y <= 10)
+			{
+				moveDirection.y = 10 * Time.deltaTime;
+			}
+			else
+			{
+				moveDirection.y = 0;
+			}
+			
+		}
+
+			// Move contoller
+			Controller.Move(moveDirection);
 		Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
 
 		if (predictedXZ != actualXZ)
@@ -376,18 +385,6 @@ public class OVRPlayerController : MonoBehaviour
 			if (moveRight)
 				MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.right);
 
-            if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
-            {
-                GravityModifier = -0.1f;
-                if (this.transform.localPosition.y >= 10)
-                {
-                    GravityModifier = 0;
-                }
-            }
-            else
-            {
-                GravityModifier = 0.1f;
-            }
 
             moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 

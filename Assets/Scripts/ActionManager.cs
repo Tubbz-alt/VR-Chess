@@ -53,7 +53,7 @@ public class ActionManager : MonoBehaviour
                 moving = false;
                 StartCoroutine(Attack());
             }
-            else if (Vector3.Distance(targetPos, transform.position) <= 0)
+            else if (Vector3.Distance(targetPos, transform.position) <= distanceToIdle)
             {
                 animator.SetBool("Moving", false);
                 moving = false;

@@ -87,6 +87,7 @@ public class Piece : MonoBehaviour
     {
         GameObject go = new GameObject("type of " + this.name);
         go.transform.position = new Vector3(this.transform.position.x, 2.5f, this.transform.position.z);
+        go.transform.LookAt(objectPointer.transform);
 
         SpriteRenderer renderer = go.AddComponent<SpriteRenderer>();
         renderer.sprite = _player == playerColor.WHITE ? pieceImageWhite : pieceImageBlack;

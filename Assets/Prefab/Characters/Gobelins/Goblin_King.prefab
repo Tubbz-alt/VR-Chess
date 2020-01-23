@@ -3442,7 +3442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 1
   distanceToHit: 1
-  distanceToIdle: 0.5
+  distanceToIdle: 0.1
   teleports: 0
   Fx: {fileID: 0}
   FxRoot: {fileID: 0}
